@@ -1,0 +1,38 @@
+/*
+ * Graph focus — make the active note easier to spot.
+ * Install in your vault's .obsidian/snippets/ folder and enable in Appearance.
+ * CSS controls graph colours, not individual node sizes.
+ */
+
+body.theme-dark {
+  --obsidian-mod-graph-focus: #ff66cc;
+  --obsidian-mod-graph-node: #777b8c;
+  --obsidian-mod-graph-line: #353845;
+}
+
+body.theme-light {
+  --obsidian-mod-graph-focus: #c00070;
+  --obsidian-mod-graph-node: #9296a3;
+  --obsidian-mod-graph-line: #d5d7df;
+}
+
+body.theme-dark,
+body.theme-light {
+  --graph-node-focused: var(--obsidian-mod-graph-focus);
+  --graph-node: var(--obsidian-mod-graph-node);
+  --graph-line: var(--obsidian-mod-graph-line);
+}
+
+/* Obsidian reads these colours to draw both global and local graphs. */
+body .graph-view.color-fill-focused {
+  color: var(--obsidian-mod-graph-focus);
+  opacity: 1;
+}
+
+body .graph-view.color-fill {
+  color: var(--obsidian-mod-graph-node);
+}
+
+body .graph-view.color-line {
+  color: var(--obsidian-mod-graph-line);
+}
